@@ -1,43 +1,194 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
-<!--<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
-            prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
-
-
-</BorderPane>-->
-
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
-
-<MenuBar xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
-         fx:controller="com.course.frontEnd.controllers.MainWindowController">
-    <menus>
-        <Menu mnemonicParsing="false" text="File">
-            <items>
-                <MenuItem mnemonicParsing="false" onAction="#newAction" text="New"/>
-                <MenuItem mnemonicParsing="false" onAction="#openAction" text="Open"/>
-                <SeparatorMenuItem mnemonicParsing="false"/>
-                <MenuItem mnemonicParsing="false" onAction="#saveAction" text="Save"/>
-                <MenuItem mnemonicParsing="false" onAction="#saveAsAction" text="Save as..."/>
-                <SeparatorMenuItem mnemonicParsing="false"/>
-                <MenuItem mnemonicParsing="false" onAction="#exitAction" text="Exit"/>
-            </items>
-        </Menu>
-        <Menu mnemonicParsing="false" text="Edit">
-            <items>
-                <MenuItem mnemonicParsing="false" onAction="#addElementAction" text="Add element"/>
-                <MenuItem mnemonicParsing="false" onAction="#deleteElementAction" text="Delete element"/>
-                <SeparatorMenuItem mnemonicParsing="false"/>
-                <MenuItem mnemonicParsing="false" onAction="#addTableAction" text="Add table"/>
-                <MenuItem mnemonicParsing="false" onAction="#deleteTableAction" text="Delete table"/>
-            </items>
-        </Menu>
-        <Menu mnemonicParsing="false" text="Help">
-            <items>
-                <MenuItem mnemonicParsing="false" onAction="#helpAction" text="Help"/>
-                <SeparatorMenuItem mnemonicParsing="false"/>
-                <MenuItem mnemonicParsing="false" onAction="#aboutAction" text="About"/>
-            </items>
-        </Menu>
-    </menus>
-</MenuBar>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.course.frontEnd.controllers.EditWindowController">
+    <top>
+        <TableView prefHeight="300.0" prefWidth="800.0" BorderPane.alignment="CENTER" fx:id="mainTable">
+            <columns>
+                <TableColumn id="idTableField" fx:id="idTableField" prefWidth="55.20001220703125" text="ID">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="id"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="nameTableField" maxWidth="204.79998779296875" minWidth="-1.0"
+                             prefWidth="204.79998779296875" text="Name">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="name"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="typeTableField" minWidth="0.0" prefWidth="230.4000244140625"
+                             text="Type Of Transport">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="typeOfTransport"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="lengthTableField" prefWidth="108.0" text="Length of path">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="length"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="stopsTableField" prefWidth="201.5999755859375" text="Quantity of stops">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="countOfStops"/>
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+    </top>
+    <left>
+        <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+              minWidth="-Infinity" prefHeight="300.0" prefWidth="400.0" spacing="10.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                       text="Label">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Label>
+                <TextField alignment="CENTER">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </TextField>
+                <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                        mnemonicParsing="false" text="Button">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Button>
+                <BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="68.0"
+                            prefWidth="400.0">
+                    <left>
+                        <TextField alignment="CENTER" maxWidth="1.7976931348623157E308" BorderPane.alignment="CENTER">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                        </TextField>
+                    </left>
+                    <right>
+                        <TextField alignment="CENTER" maxWidth="1.7976931348623157E308" BorderPane.alignment="CENTER">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                        </TextField>
+                    </right>
+                    <top>
+                        <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                               text="Label" BorderPane.alignment="CENTER">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                        </Label>
+                    </top>
+                    <VBox.margin>
+                        <Insets/>
+                    </VBox.margin>
+                </BorderPane>
+                <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                        mnemonicParsing="false" text="Button">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Button>
+                <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                        mnemonicParsing="false" text="Button">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Button>
+            </children>
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+            </padding>
+        </VBox>
+    </left>
+    <right>
+        <VBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+              minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="400.0" spacing="16.0"
+              BorderPane.alignment="CENTER">
+            <children>
+                <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308"
+                        maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#clickAction" text="Button"
+                        textAlignment="CENTER">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                    <VBox.margin>
+                        <Insets/>
+                    </VBox.margin>
+                    <opaqueInsets>
+                        <Insets/>
+                    </opaqueInsets>
+                </Button>
+                <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                        mnemonicParsing="false" text="Button" textAlignment="CENTER">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                    <VBox.margin>
+                        <Insets/>
+                    </VBox.margin>
+                    <opaqueInsets>
+                        <Insets/>
+                    </opaqueInsets>
+                </Button>
+                <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                        mnemonicParsing="false" text="Button" textAlignment="CENTER">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                    <VBox.margin>
+                        <Insets/>
+                    </VBox.margin>
+                    <opaqueInsets>
+                        <Insets/>
+                    </opaqueInsets>
+                </Button>
+                <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                        mnemonicParsing="false" text="Button" textAlignment="CENTER">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                    <VBox.margin>
+                        <Insets/>
+                    </VBox.margin>
+                    <opaqueInsets>
+                        <Insets/>
+                    </opaqueInsets>
+                </Button>
+                <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                        mnemonicParsing="false" text="Button" textAlignment="CENTER">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                    <VBox.margin>
+                        <Insets/>
+                    </VBox.margin>
+                    <opaqueInsets>
+                        <Insets/>
+                    </opaqueInsets>
+                </Button>
+                <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                        mnemonicParsing="false" text="Button" textAlignment="CENTER">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                    <VBox.margin>
+                        <Insets/>
+                    </VBox.margin>
+                    <opaqueInsets>
+                        <Insets/>
+                    </opaqueInsets>
+                </Button>
+            </children>
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+            </padding>
+        </VBox>
+    </right>
+</BorderPane>

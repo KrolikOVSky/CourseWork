@@ -1,4 +1,4 @@
-package test;
+package excluded;
 
 public class TestController2 {
 }

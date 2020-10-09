@@ -26,7 +26,7 @@ public class Routes {
 
     public Route getById(Long id){
         for (var el : routes) {
-            if (el.getId().equals(id)) return el;
+            if (el.getId() == id) return el;
         }
         return null;
     }

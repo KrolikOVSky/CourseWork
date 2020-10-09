@@ -1,5 +1,6 @@
 package com.course.backEnd;
 
+import com.course.frontEnd.controllers.EditWindowController;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
@@ -10,6 +11,7 @@ import java.io.FileWriter;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Global {
 
@@ -18,6 +20,7 @@ public class Global {
     public static Routes routes;
 
     public static void errorReport(Exception e) {
+        e.printStackTrace();
         TextArea output = new TextArea();
         {
             StringBuilder string = new StringBuilder();
@@ -76,7 +79,7 @@ public class Global {
 
         routes = new Routes();
         var j = 0;
-        for (var i = 0; i < content.length / 4; i++) {
+        for (var i = 0; i < content.length / 5; i++) {
             Route route = new Route();
             route.setId(Long.parseLong(content[j].substring((content[j].indexOf("=")) + 1)));
             j++;
@@ -90,13 +93,14 @@ public class Global {
             j++;
             routes.add(route);
         }
-
+        System.out.println(Arrays.toString(routes.getRoutes().toArray()));
+//        EditWindowController.addToTable(routes);
 //       return list;
     }
 
     public static void newSource() {
         routes = new Routes(new ArrayList<Route>());
-
+//        EditWindowController.addToTable(routes);
     }
 
 

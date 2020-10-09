@@ -1,4 +1,4 @@
-package test;
+package excluded;
 
 import com.course.paths.IPaths;
 import javafx.application.Application;

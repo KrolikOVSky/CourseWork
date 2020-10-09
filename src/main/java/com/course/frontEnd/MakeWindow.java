@@ -41,7 +41,9 @@ public class MakeWindow {
     }
 
 
-    public MakeWindow(Stage stage) throws Exception{ this.stage = stage; }
+    public MakeWindow(Stage stage) throws Exception{
+        this.stage = stage;
+    }
 
     public FXMLLoader getLoader(){ return this.loader; }
     public Stage getStage() { return stage; }
